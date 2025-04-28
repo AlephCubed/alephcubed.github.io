@@ -24,7 +24,7 @@ enum Route {
 
 fn switch(route: Route) -> Html {
     match route {
-        Route::Root => html! { 
+        Route::Root => html! {
             <Main />
         },
         Route::Test => html! { <h1>{ "Test" }</h1> },
@@ -33,7 +33,7 @@ fn switch(route: Route) -> Html {
 
 #[function_component(Main)]
 fn root_page() -> Html {
-    html! { 
+    html! {
         <div class="main">
             <TitleSection />
             <TestingSection text="More text for testing."/>
@@ -53,8 +53,8 @@ fn title() -> Html {
 }
 
 #[derive(Properties, Eq, PartialEq)]
-struct TextProperty { 
-    pub text: String 
+struct TextProperty {
+    pub text: String,
 }
 
 #[function_component(TestingSection)]
