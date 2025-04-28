@@ -1,9 +1,55 @@
-html {
-  background-color: #212121;
-  color: #DCDCDC;
+* {
+  padding: 0;
+  margin: 0;
 }
 
-body {
+.main {
+  width: 100%;
+  height: 100%;
   font-family: "JetBrains Mono", sans-serif;
-  padding: 10px;
+  background: #212121 linear-gradient(to right, rgb(0, 0, 0), rgb(5, 0, 40));
+}
+
+.planet {
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  z-index: 1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: translateY(50%);
+  text-align: center;
+  color: aliceblue;
+  white-space: nowrap;
+  font-size: 400%;
+  font-weight: bold;
+  font-family: "JetBrains Mono", sans-serif;
+}
+
+section {
+  min-height: 100vh;
+}
+
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateY(25%);
+  transition: all 3s;
+}
+
+@media(prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
 }
