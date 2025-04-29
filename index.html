@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-    <link rel="stylesheet" href="/main-e86fd0de300ce14c.css" integrity="sha384-nyQfSNoURJp16+68pyK1mLZJF2GMHESwQMTZ7UG5QScbj63cqc//KNwHRkf4n4ha"/>
+    <link rel="stylesheet" href="/main-2346d3afefb27baf.css" integrity="sha384-oBA1E887JHghay8jARj08k0TpEdKUrus9RB0saZkaNqdFmqPxoZYfWjzByVgzNAE"/>
     
-    <title>yew template</title>
-<link rel="modulepreload" href="/alephcubed_github_io-ed506d4f0bf7b32e.js" crossorigin="anonymous" integrity="sha384-OEXX0ZX+FBeRGmH1/SKd8PzDVptpMWVr107bVG0FOC/VEOUtslzgagu6aEgRSMMM"><link rel="preload" href="/alephcubed_github_io-ed506d4f0bf7b32e_bg.wasm" crossorigin="anonymous" integrity="sha384-96MLozrlqAvvBaaJXKVz4ofH/AUfWLE3tlLZKtm4KpsNpWmRZkd1+SvHqIhKWqKc" as="fetch" type="application/wasm"></head>
+    
+    <title>AlephCubed</title>
+<link rel="modulepreload" href="/alephcubed_github_io-19c1167a45cc33b8.js" crossorigin="anonymous" integrity="sha384-pYGqLkPnEOnCAQqkYDcm9bZfAaHGgv44hGIpdbSbv5/kL3JPIDciLIFxLkJnvgM7"><link rel="preload" href="/alephcubed_github_io-19c1167a45cc33b8_bg.wasm" crossorigin="anonymous" integrity="sha384-qY+ls+3TUYzSAzncSuaeHv1Zzhj191wDacBFBu6alReH831mS3eiwDW8DmrhY01A" as="fetch" type="application/wasm"></head>
 <body>
 <!-- Start Single Page Apps for GitHub Pages -->
 <script type="text/javascript">
@@ -22,7 +23,7 @@
     // the single page app to route accordingly.
     (function(l) {
         if (l.search[1] === '/' ) {
-            var decoded = l.search.slice(1).split('&').map(function(s) {
+            const decoded = l.search.slice(1).split('&').map(function (s) {
                 return s.replace(/~and~/g, '&')
             }).join('?');
             window.history.replaceState(null, null,
@@ -34,8 +35,8 @@
 <!-- End Single Page Apps for GitHub Pages -->
 
 <script type="module">
-import init, * as bindings from '/alephcubed_github_io-ed506d4f0bf7b32e.js';
-const wasm = await init({ module_or_path: '/alephcubed_github_io-ed506d4f0bf7b32e_bg.wasm' });
+import init, * as bindings from '/alephcubed_github_io-19c1167a45cc33b8.js';
+const wasm = await init({ module_or_path: '/alephcubed_github_io-19c1167a45cc33b8_bg.wasm' });
 
 
 window.wasmBindings = bindings;
