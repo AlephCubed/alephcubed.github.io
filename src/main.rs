@@ -1,3 +1,6 @@
+mod fade_in;
+
+use crate::fade_in::FadeIn;
 use yew::prelude::*;
 use yew_router::prelude::*;
 
@@ -34,11 +37,7 @@ fn switch(route: Route) -> Html {
 #[function_component(Main)]
 fn root_page() -> Html {
     html! {
-        <div class="main">
-            <TitleSection />
-            <TestingSection text="More text for testing."/>
-            <TestingSection text="Even more text."/>
-        </div>
+        <TitleSection />
     }
 }
 
@@ -47,21 +46,9 @@ fn title() -> Html {
     html! {
         <section>
             <h1 class="title">{ "AlephCubed" }</h1>
-            <img src="static/images/DefaultPlanet.png" class="planet hidden"/>
-        </section>
-    }
-}
-
-#[derive(Properties, Eq, PartialEq)]
-struct TextProperty {
-    pub text: String,
-}
-
-#[function_component(TestingSection)]
-fn test_section(text: &TextProperty) -> Html {
-    html! {
-        <section class="hidden">
-            <h1 class="title">{ &text.text }</h1>
+            <FadeIn>
+                <img src="static/images/DefaultPlanet.png" class="planet"/>
+            </FadeIn>
         </section>
     }
 }

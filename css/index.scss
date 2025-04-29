@@ -1,6 +1,7 @@
 html {
   font-family: "JetBrains Mono", sans-serif;
   background: #000000 linear-gradient(to right, #000000, rgb(5, 0, 40));
+  color: aliceblue;
 }
 
 * {
@@ -26,7 +27,6 @@ html {
   width: 100%;
   transform: translateY(50%);
   text-align: center;
-  color: aliceblue;
   white-space: nowrap;
   font-size: 400%;
   font-weight: bold;
@@ -37,8 +37,14 @@ section {
   min-height: 100vh;
 }
 
+.fade-in {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+  transition: all 3s;
+}
 
-.hidden {
+.fade-out {
   opacity: 0;
   filter: blur(5px);
   transform: translateY(25%);
@@ -46,13 +52,7 @@ section {
 }
 
 @media(prefers-reduced-motion) {
-  .hidden {
+  .fade-in, .fade-out {
     transition: none;
   }
-}
-
-.show {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateY(0);
 }
