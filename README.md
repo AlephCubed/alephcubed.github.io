@@ -1,1 +1,0 @@
-A basic website created using Yew, based on [this template](https://github.com/Ja-sonYun/yew-template-for-github-io).
