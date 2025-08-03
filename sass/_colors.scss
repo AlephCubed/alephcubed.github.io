@@ -1,0 +1,21 @@
+:root {
+	--bg: #ffffff;
+	--text: #000000;
+	--link: #0066cc;
+
+	--flag3: #9AE8C0;
+	--flag2: #25CEAA;
+	--flag1: #098D6F;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: #121212;
+		--text: #f0f0f0;
+		--link: #80bfff;
+
+		--flag3: #3D1B79;
+		--flag2: #5049CB;
+		--flag1: #7AACE4;
+	}
+}

@@ -1,0 +1,65 @@
+@import "colors";
+
+body {
+	background: var(--bg);
+	color: var(--text);
+}
+
+.title-stack {
+	position: relative;
+	display: inline-block;
+	font-size: 5rem;
+	font-weight: bold;
+	line-height: 1;
+	padding: 10px;
+}
+
+.title-layer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: transform 0.3s, opacity 0.3s;
+	pointer-events: none;
+	font-family: "Lucida Console", monospace;
+	letter-spacing: 2px;
+
+	&.ghost1 {
+		color: var(--flag1);
+		z-index: 3;
+	}
+
+	&.ghost2 {
+		color: var(--flag2);
+		z-index: 2;
+	}
+
+	&.ghost3 {
+		color: var(--flag3);
+		z-index: 1;
+	}
+
+	&.base {
+		z-index: 3;
+		pointer-events: auto;
+		color: var(--text);
+		text-decoration: none;
+	}
+
+	.title-stack:hover &.base {
+		transform: translate(6px, 6px);
+	}
+
+	.title-stack:hover &.ghost1 {
+		transform: translate(4px, 4px);
+		opacity: 1;
+	}
+
+	.title-stack:hover &.ghost2 {
+		transform: translate(2px, 2px);
+		opacity: 1;
+	}
+
+	.title-stack:hover &.ghost3 {
+		opacity: 1;
+	}
+}
