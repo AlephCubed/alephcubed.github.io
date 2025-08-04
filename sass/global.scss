@@ -3,15 +3,56 @@
 body {
 	background: var(--bg);
 	color: var(--text);
+	font-family: "Lucida Console", monospace;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.top-nav {
+	background-color: var(--bg-secondary);
+	padding: 1rem 0;
+	width: 100%;
+
+	.container {
+		nav {
+			display: flex;
+			align-items: center;
+			justify-content: start;
+			gap: 2rem;
+			flex-wrap: wrap;
+		}
+	}
+
+	.nav-links {
+		display: flex;
+		gap: 1.5rem;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li a {
+			color: var(--text);
+			text-decoration: none;
+			font-weight: 500;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
 }
 
 .title-stack {
 	position: relative;
 	display: inline-block;
-	font-size: 5rem;
+	font-size: 2.5rem;
 	font-weight: bold;
-	line-height: 1;
-	padding: 10px;
 }
 
 .title-layer {
@@ -20,8 +61,15 @@ body {
 	left: 0;
 	transition: transform 0.3s, opacity 0.3s;
 	pointer-events: none;
-	font-family: "Lucida Console", monospace;
 	letter-spacing: 2px;
+
+	// Used to make sure the title-stack has width & height.
+	&.measure {
+		position: relative;
+		visibility: hidden;
+		pointer-events: none;
+		display: block;
+	}
 
 	&.ghost1 {
 		color: var(--flag1);
