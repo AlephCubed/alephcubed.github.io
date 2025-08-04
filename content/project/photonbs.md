@@ -1,8 +1,7 @@
 ---
 title: "PhotonBS"
 date: 2025-05-25
+description: "A Beatsaber map editor with support for V3/group lighting."
 ---
-
-A WIP Beatsaber map editor with support for V3/group lighting.
 
 Made in Rust using the Bevy game engine.

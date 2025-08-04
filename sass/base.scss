@@ -10,18 +10,19 @@ body {
 }
 
 a {
-	color: var(--flag2);
+	color: var(--link);
 
-	&:hover {
-		color: var(--flag1);
+	&:hover,
+	&:visited:hover {
+		color: var(--link-hover);
 	}
 
 	&:active {
-		color: var(--flag3);
+		color: var(--link-active);
 	}
 
 	&:visited {
-		color: var(--flag1);
+		color: var(--link-visited);
 	}
 }
 
