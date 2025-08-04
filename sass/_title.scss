@@ -1,17 +1,10 @@
 @import "colors";
 
-body {
-	background: var(--bg);
-	color: var(--text);
-}
-
 .title-stack {
 	position: relative;
 	display: inline-block;
-	font-size: 5rem;
+	font-size: 2.5rem;
 	font-weight: bold;
-	line-height: 1;
-	padding: 10px;
 }
 
 .title-layer {
@@ -20,8 +13,15 @@ body {
 	left: 0;
 	transition: transform 0.3s, opacity 0.3s;
 	pointer-events: none;
-	font-family: "Lucida Console", monospace;
 	letter-spacing: 2px;
+
+	// Used to make sure the title-stack has width & height.
+	&.measure {
+		position: relative;
+		visibility: hidden;
+		pointer-events: none;
+		display: block;
+	}
 
 	&.ghost1 {
 		color: var(--flag1);
