@@ -17,7 +17,8 @@ a {
 		color: var(--link-hover);
 	}
 
-	&:active {
+	&:active,
+	&:visited:active {
 		color: var(--link-active);
 	}
 
