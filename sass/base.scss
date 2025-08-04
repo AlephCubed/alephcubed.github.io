@@ -9,6 +9,22 @@ body {
 	padding: 0;
 }
 
+a {
+	color: var(--flag2);
+
+	&:hover {
+		color: var(--flag1);
+	}
+
+	&:active {
+		color: var(--flag3);
+	}
+
+	&:visited {
+		color: var(--flag1);
+	}
+}
+
 .container {
 	max-width: 800px;
 	margin-left: auto;
