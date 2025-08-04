@@ -3,7 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>AlephCubed</title>
+    <title>
+        {% if page is defined %}
+            AlephCubed - {{ page.title }}
+        {% elif section is defined and section.components | length == 1 %}
+            AlephCubed - {{ section.title }}
+        {% else %}
+            AlephCubed
+        {% endif %}
+    </title>
     <link rel="stylesheet" href="/base.css">
 </head>
 
