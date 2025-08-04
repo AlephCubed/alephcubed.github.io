@@ -1,0 +1,1 @@
+My [personal website](https://alephcubed.com) generated using [Zola](https://www.getzola.org) and hosted on Github Pages.
