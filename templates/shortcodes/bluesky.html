@@ -1,0 +1,16 @@
+<!-- 
+Usage:
+
+{{ bluesky(
+	uri="at://did:plc:q2kmuessge635fpcnyncsdlv/app.bsky.feed.post/3lsep5fykls2p",
+	cid="bafyreifm43wvjyr5afglkh44u75xcrzazdfukokjurunhrfl6hul7s43om" 
+)}}
+
+-->
+
+<div class="embed">
+	<blockquote class="bluesky-embed" data-bluesky-uri="{{ uri }}" data-bluesky-cid="{{ cid }}"
+		data-bluesky-embed-color-mode="{{ mode | default(value='system') }}">
+	</blockquote>
+	<script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
+</div>

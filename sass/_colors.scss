@@ -2,11 +2,16 @@
 	--bg: #ffffff;
 	--bg-secondary: #e8e8e8;
 	--text: #000000;
-	--link: #0066cc;
 
 	--flag3: #9AE8C0;
 	--flag2: #25CEAA;
 	--flag1: #098D6F;
+
+	--link: var(--flag2);
+	--link-hover: var(--flag1);
+	--link-active: var(--flag3);
+	// Same as link color but with 20 added to hue.
+	--link-visited: hsl(187, 70%, 48%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,10 +19,11 @@
 		--bg: #121212;
 		--bg-secondary: #202020;
 		--text: #f0f0f0;
-		--link: #80bfff;
 
 		--flag3: #3D1B79;
 		--flag2: #5049CB;
 		--flag1: #7AACE4;
+		// Same as link color but with 20 added to hue.
+		--link-visited: hsl(263, 56%, 54%);
 	}
 }

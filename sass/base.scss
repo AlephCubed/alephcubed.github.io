@@ -1,5 +1,6 @@
 @import "colors";
 @import "nav_bar";
+@import "social_links";
 
 body {
 	background: var(--bg);
@@ -9,19 +10,25 @@ body {
 	padding: 0;
 }
 
-a {
-	color: var(--flag2);
+p {
+	margin-left: 25px;
+}
 
-	&:hover {
-		color: var(--flag1);
+a {
+	color: var(--link);
+
+	&:hover,
+	&:visited:hover {
+		color: var(--link-hover);
 	}
 
-	&:active {
-		color: var(--flag3);
+	&:active,
+	&:visited:active {
+		color: var(--link-active);
 	}
 
 	&:visited {
-		color: var(--flag1);
+		color: var(--link-visited);
 	}
 }
 
@@ -29,4 +36,14 @@ a {
 	max-width: 800px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.center,
+.title {
+	text-align: center;
+}
+
+.embed {
+	margin: auto;
+	width: 50%;
 }

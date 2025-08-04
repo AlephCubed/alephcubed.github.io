@@ -1,0 +1,30 @@
+.social-links {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	gap: 2rem;
+	align-items: center;
+	justify-content: center;
+	margin: 25px;
+
+	li a {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		text-decoration: none;
+		color: var(--text);
+		font-weight: 500;
+
+		&:hover {
+			text-decoration: underline;
+			color: var(--link-hover);
+		}
+
+		.icon {
+			width: 1.25rem;
+			height: 1.25rem;
+			fill: currentColor;
+		}
+	}
+}
