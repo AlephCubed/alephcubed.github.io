@@ -11,7 +11,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	transition: transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s;
 	pointer-events: none;
 	letter-spacing: 2px;
 
@@ -51,15 +51,9 @@
 
 	.title-stack:hover &.ghost1 {
 		transform: translate(4px, 4px);
-		opacity: 1;
 	}
 
 	.title-stack:hover &.ghost2 {
 		transform: translate(2px, 2px);
-		opacity: 1;
-	}
-
-	.title-stack:hover &.ghost3 {
-		opacity: 1;
 	}
 }
