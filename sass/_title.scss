@@ -24,17 +24,17 @@
 	}
 
 	&.ghost1 {
-		color: var(--flag1);
+		color: var(--ghost1);
 		z-index: 3;
 	}
 
 	&.ghost2 {
-		color: var(--flag2);
+		color: var(--ghost2);
 		z-index: 2;
 	}
 
 	&.ghost3 {
-		color: var(--flag3);
+		color: var(--ghost3);
 		z-index: 1;
 	}
 

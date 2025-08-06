@@ -7,6 +7,10 @@
 	--flag2: #25CEAA;
 	--flag1: #098D6F;
 
+	--ghost3: var(--flag3);
+	--ghost2: var(--flag2);
+	--ghost1: var(--flag1);
+
 	--link: var(--flag2);
 	--link-hover: var(--flag1);
 	--link-active: var(--flag3);

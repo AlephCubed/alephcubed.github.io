@@ -40,6 +40,72 @@
     </div>
 </header>
 
+<script>
+    // Sets the colors of the logo hover effect for specific holidays.
+    // 
+    // If there is one set of colors, then the same will be used for light vs dark mode, 
+    // and a bool can be added as a fourth element to control whether to reverse the order of colors in light mode.
+    // 
+    // If there is two sets of colors, the first is for dark mode and the second is for light mode.
+    //
+    // (Gay pride is not present because that is the default theme for the entire site.)
+    const holidayThemes = {
+        // Canada Day
+        "07-01": [["#FF0000", "#CC0000", "#AA0000", true]],
+        // Aromantic
+        "06-05": [["#ABABA9", "#B1D184", "#59A24E", true]],
+        // Asexual
+        "06-06": [["#A2A2A2", "#7C267D", "#121212"], ["#A2A2A2", "#7C267D", "#FFFFFF"]],
+        // Transgender
+        "03-31": [["#63CBF5", "#ADBAD7", "#F9A7B9", false]],
+        // Lesbian
+        "10-08": [["#F89755", "#D42F27", "#A31F62"], ["#A31F62", "#D461A4", "#F89755"]],
+        // Pansexual
+        "24-08": [["#4CA9E0", "#ED3086", "#FCD802", false]],
+        // Non-binary
+        "07-14": [["#8C5EA6", "#A2A2A2", "#FAEE3A", false]],
+        // Bisexual
+        "09-23": [["#D71970", "#735195", "#1D439C", true]],
+    };
+
+    // Get today's MM-DD
+    const today = new Date();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    const key = `${month}-${day}`;
+
+    // Check for matching holiday
+    const theme = holidayThemes[key];
+    if (theme) {
+        const root = document.documentElement;
+
+        const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (theme.length == 1) {
+            if (isDark || !theme[0][3]) {
+                root.style.setProperty("--ghost1", theme[0][0]);
+                root.style.setProperty("--ghost2", theme[0][1]);
+                root.style.setProperty("--ghost3", theme[0][2]);
+            } else {
+                root.style.setProperty("--ghost1", theme[0][2]);
+                root.style.setProperty("--ghost2", theme[0][1]);
+                root.style.setProperty("--ghost3", theme[0][0]);
+            }
+        }
+
+        if (theme.length == 2) {
+            if (isDark) {
+                root.style.setProperty("--ghost1", theme[0][0]);
+                root.style.setProperty("--ghost2", theme[0][1]);
+                root.style.setProperty("--ghost3", theme[0][2]);
+            } else {
+                root.style.setProperty("--ghost1", theme[1][0]);
+                root.style.setProperty("--ghost2", theme[1][1]);
+                root.style.setProperty("--ghost3", theme[1][2]);
+            }
+        }
+    }
+</script>
 
 <body>
     <section class="section">
