@@ -4,3 +4,4 @@
 /node_modules
 /css/tailwind/dist
 /public
+.vscode/settings.json
