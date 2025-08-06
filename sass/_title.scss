@@ -15,6 +15,12 @@
 	pointer-events: none;
 	letter-spacing: 2px;
 
+	img {
+		width: 1em;
+		height: 1em;
+		stroke: currentColor;
+	}
+
 	// Used to make sure the title-stack has width & height.
 	&.measure {
 		position: relative;
