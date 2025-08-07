@@ -51,3 +51,7 @@ a {
 	margin: auto;
 	width: 50%;
 }
+
+.preload * {
+	transition: none !important;
+}
