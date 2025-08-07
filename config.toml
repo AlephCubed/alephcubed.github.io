@@ -9,4 +9,4 @@ bottom_footnotes = true
 # insert_anchor_links = "left"
 
 [extra]
-# Put all your custom variables here
+default_description = "My work-in-progress personal website."
