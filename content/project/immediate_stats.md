@@ -15,7 +15,7 @@ multipliers, without either
 [Immediate mode GUI](https://en.wikipedia.org/wiki/Immediate_mode_(computer_graphics)#Immediate_mode_GUI)
 seemed to offer a solution.
 
-# Similar Projects
+## Similar Projects
 
 After starting on this project, I have come across two other libraries that seem
 to be solving the same problem,

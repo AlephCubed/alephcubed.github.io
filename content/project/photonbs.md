@@ -9,7 +9,7 @@ Made in Rust using the Bevy game engine.
 I will expand on this page eventually, but for now I post updates and showcases
 on [Bluesky](https://bsky.app/profile/alephcubed.com).
 
-# Past Attempts
+## Past Attempts
 
 This is actually my third attempt at making a V3 beatmap editor.
 
