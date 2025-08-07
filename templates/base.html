@@ -22,15 +22,26 @@
     <link rel="manifest" href="/favicon/site.webmanifest" />
 </head>
 
-<header class="top-nav">
+<header class="top-nav preload">
     <div class="container">
         <nav>
             <a href="/" class="title-stack">
-                <span class="title-layer base measure">AlephCubed</span>
-                <span class="title-layer ghost3">AlephCubed</span>
-                <span class="title-layer ghost2">AlephCubed</span>
-                <span class="title-layer ghost1">AlephCubed</span>
-                <span class="title-layer base">AlephCubed</span>
+                <span class="title-layer ghost3">
+                    {% include "partials/logo.html" %}
+                    <span class="text">AlephCubed</span>
+                </span>
+                <span class="title-layer ghost2">
+                    {% include "partials/logo.html" %}
+                    <span class="text">AlephCubed</span>
+                </span>
+                <span class="title-layer ghost1">
+                    {% include "partials/logo.html" %}
+                    <span class="text">AlephCubed</span>
+                </span>
+                <span class="title-layer base">
+                    {% include "partials/logo.html" %}
+                    <span class="text">AlephCubed</span>
+                </span>
             </a>
             <ul class="nav-links">
                 <li><a href="/project/">Projects</a></li>
@@ -48,5 +59,14 @@
         </div>
     </section>
 </body>
+
+<script>
+    window.onload = function() {
+        var elements = document.getElementsByClassName("preload");
+        while (elements.length > 0) {
+            elements[0].classList.remove('preload');
+        }
+    }
+</script>
 
 </html>
