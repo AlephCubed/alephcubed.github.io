@@ -32,6 +32,25 @@ a {
 	}
 }
 
+.heading-anchor {
+	color: #808080;
+	text-decoration: none;
+
+	&:hover,
+	&:visited:hover {
+		color: #B0B0B0;
+	}
+
+	&:active,
+	&:visited:active {
+		color: #404040;
+	}
+
+	&:visited {
+		color: #808080;
+	}
+}
+
 .container {
 	max-width: 800px;
 
