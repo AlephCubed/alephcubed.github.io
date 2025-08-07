@@ -82,15 +82,9 @@
 
 	.title-stack:hover &.ghost1 {
 		transform: translate(4px, 4px);
-		opacity: 1;
 	}
 
 	.title-stack:hover &.ghost2 {
 		transform: translate(2px, 2px);
-		opacity: 1;
-	}
-
-	.title-stack:hover &.ghost3 {
-		opacity: 1;
 	}
 }
