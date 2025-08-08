@@ -1,4 +1,7 @@
 base_url = "https://alephcubed.com"
+title = "AlephCubed"
+description = "My work-in-progress personal website."
+
 compile_sass = true
 build_search_index = false
 
