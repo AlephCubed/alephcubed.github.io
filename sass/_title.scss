@@ -41,7 +41,7 @@
 
 	span {
 		max-width: 10em;
-		transition: opacity 0.2s, max-width 0.3s, padding 0.3s;
+		transition: max-width 0.3s, padding 0.3s;
 
 		@media (max-width: 500px) {
 			opacity: 0;
@@ -57,19 +57,16 @@
 	}
 
 	&.ghost1 {
-		opacity: 0;
 		color: var(--flag1);
 		z-index: 3;
 	}
 
 	&.ghost2 {
-		opacity: 0;
 		color: var(--flag2);
 		z-index: 2;
 	}
 
 	&.ghost3 {
-		opacity: 0;
 		color: var(--flag3);
 		z-index: 1;
 	}
@@ -79,6 +76,11 @@
 		pointer-events: auto;
 		color: var(--text);
 		text-decoration: none;
+
+		span {
+			// We only want the base to fade.
+			transition: opacity 0.2s, max-width 0.3s, padding 0.3s;
+		}
 	}
 
 	.title-stack:hover &.base {
@@ -86,16 +88,10 @@
 	}
 
 	.title-stack:hover &.ghost1 {
-		opacity: 1;
 		transform: translate(4px, 4px);
 	}
 
 	.title-stack:hover &.ghost2 {
-		opacity: 1;
 		transform: translate(2px, 2px);
-	}
-
-	.title-stack:hover &.ghost3 {
-		opacity: 1;
 	}
 }
