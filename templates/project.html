@@ -9,8 +9,8 @@
 {{ section.content | safe }}
 
 {% for page in section.pages %}
-	<h2><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h2>
-	<p class="description">{{ page.description }}</p>
+<h2><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h2>
+<p class="description">{{ page.description }}</p>
 {% endfor %}
 
 {% endblock content %}

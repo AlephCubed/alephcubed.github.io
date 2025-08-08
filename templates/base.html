@@ -5,22 +5,22 @@
     <meta charset="UTF-8">
     <meta name="author" content="AlephCubed">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     {% if page is defined %}
-        <meta name="description" content="{{ page.description }}">
-    {% elif section is defined and section.components | length != 0 %}
-        <meta name="description" content="{{ section.description }}">
+    <meta name="description" content="{{ page.description }}">
+    {% elif section is defined %}
+    <meta name="description" content="{{ section.description }}">
     {% else %}
-        <meta name="description" content="{{ config.extra.default_description }}">
+    <meta name="description" content="{{ config.extra.default_description }}">
     {% endif %}
 
     <title>
         {% if page is defined %}
-            AlephCubed - {{ page.title }}
+        AlephCubed - {{ page.title }}
         {% elif section is defined and section.components | length != 0 %}
-            AlephCubed - {{ section.title }}
+        AlephCubed - {{ section.title }}
         {% else %}
-            AlephCubed
+        AlephCubed
         {% endif %}
     </title>
     <link rel="stylesheet" href="/base.css">
@@ -73,7 +73,7 @@
 </body>
 
 <script>
-    window.onload = function() {
+    window.onload = function () {
         var elements = document.getElementsByClassName("preload");
         while (elements.length > 0) {
             elements[0].classList.remove('preload');
