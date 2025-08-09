@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="AlephCubed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)" />
+
+
+    
+    <meta name="description" content="A Rust crate for game stats that reset every frame, inspired by immediate mode GUI.">
+    
+
+    <title>
+        
+        AlephCubed - Immediate Stats
+        
+    </title>
+    <link rel="stylesheet" href="/base.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="AlephCubed" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+</head>
+
+<header class="top-nav preload">
+    <div class="container">
+        <nav>
+            <a href="/" class="title-stack">
+                <span class="title-layer ghost3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+	<path stroke="currentColor" stroke-linejoin="round" stroke-width="44"
+		d="M239 45c6-3 9-5 13-5h8c4 0 7 2 13 5l163 91c6 4 10 5 12 8l5 8 1 15v178l-1 15-5 8c-2 3-6 4-12 8l-163 91c-6 3-9 5-13 5h-8c-4 0-7-2-13-5L76 376c-6-4-10-5-12-8l-5-8-1-15V167l1-15 5-8c2-3 6-4 12-8z" />
+	<path stroke="currentColor" stroke-linejoin="round" stroke-width="44" d="m157.5 90.5 197 331" />
+	<path stroke="currentColor" stroke-linejoin="round" stroke-width="44"
+		d="M354.5 90.5c0 139.69631.69456 145.15423-67.92722 198.2724M157.5 421.5c.0285-139.69631-.66493-145.15437 67.96769-198.25853" />
+</svg>
+                    <span class="text">AlephCubed</span>
+                </span>
+                <span class="title-layer ghost2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+	<path stroke="currentColor" stroke-linejoin="round" stroke-width="44"
+		d="M239 45c6-3 9-5 13-5h8c4 0 7 2 13 5l163 91c6 4 10 5 12 8l5 8 1 15v178l-1 15-5 8c-2 3-6 4-12 8l-163 91c-6 3-9 5-13 5h-8c-4 0-7-2-13-5L76 376c-6-4-10-5-12-8l-5-8-1-15V167l1-15 5-8c2-3 6-4 12-8z" />
+	<path stroke="currentColor" stroke-linejoin="round" stroke-width="44" d="m157.5 90.5 197 331" />
+	<path stroke="currentColor" stroke-linejoin="round" stroke-width="44"
+		d="M354.5 90.5c0 139.69631.69456 145.15423-67.92722 198.2724M157.5 421.5c.0285-139.69631-.66493-145.15437 67.96769-198.25853" />
+</svg>
+                    <span class="text">AlephCubed</span>
+                </span>
+                <span class="title-layer ghost1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+	<path stroke="currentColor" stroke-linejoin="round" stroke-width="44"
+		d="M239 45c6-3 9-5 13-5h8c4 0 7 2 13 5l163 91c6 4 10 5 12 8l5 8 1 15v178l-1 15-5 8c-2 3-6 4-12 8l-163 91c-6 3-9 5-13 5h-8c-4 0-7-2-13-5L76 376c-6-4-10-5-12-8l-5-8-1-15V167l1-15 5-8c2-3 6-4 12-8z" />
+	<path stroke="currentColor" stroke-linejoin="round" stroke-width="44" d="m157.5 90.5 197 331" />
+	<path stroke="currentColor" stroke-linejoin="round" stroke-width="44"
+		d="M354.5 90.5c0 139.69631.69456 145.15423-67.92722 198.2724M157.5 421.5c.0285-139.69631-.66493-145.15437 67.96769-198.25853" />
+</svg>
+                    <span class="text">AlephCubed</span>
+                </span>
+                <span class="title-layer base">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+	<path stroke="currentColor" stroke-linejoin="round" stroke-width="44"
+		d="M239 45c6-3 9-5 13-5h8c4 0 7 2 13 5l163 91c6 4 10 5 12 8l5 8 1 15v178l-1 15-5 8c-2 3-6 4-12 8l-163 91c-6 3-9 5-13 5h-8c-4 0-7-2-13-5L76 376c-6-4-10-5-12-8l-5-8-1-15V167l1-15 5-8c2-3 6-4 12-8z" />
+	<path stroke="currentColor" stroke-linejoin="round" stroke-width="44" d="m157.5 90.5 197 331" />
+	<path stroke="currentColor" stroke-linejoin="round" stroke-width="44"
+		d="M354.5 90.5c0 139.69631.69456 145.15423-67.92722 198.2724M157.5 421.5c.0285-139.69631-.66493-145.15437 67.96769-198.25853" />
+</svg>
+                    <span class="text">AlephCubed</span>
+                </span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/project/">Projects</a></li>
+                <li><a href="/contact/">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<body>
+    <section class="section">
+        <div class="container">
+            
+
+<h1 class="title">Immediate Stats</h1>
+<p class="subtitle">March 23, 2025</p>
+<p class="description">A Rust crate for game stats that reset every frame, inspired by immediate mode GUI.</p>
+
+<p>This is my attempt at solving the issue of game stat tracking for a Bevy project
+I was working on. I wanted a way to add temporary bonuses, including
+multipliers, without either</p>
+<ol>
+<li>requiring separate setup/teardown logic,</li>
+<li>nor making reading stats more complex.</li>
+</ol>
+<p><a rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Immediate_mode_(computer_graphics)#Immediate_mode_GUI">Immediate mode GUI</a>
+seemed to offer a solution.</p>
+<h2 id="similar-projects"><a class="heading-anchor" href="#similar-projects" aria-label="Anchor link for: similar-projects"># </a>Similar Projects</h2>
+<p>After starting on this project, I have come across two other libraries that seem
+to be solving the same problem,
+<a rel="noopener" target="_blank" href="https://github.com/mintlu8/bevy_stat_query">Bevy Stat Query</a> and
+<a rel="noopener" target="_blank" href="https://github.com/DEMIURGE-studio/bevy_gauge">Bevy Gauge</a>. I haven't looked
+into either in detail, but both of these seem much more advanced/mature.</p>
+
+
+
+        </div>
+    </section>
+</body>
+
+<script>
+    window.onload = function () {
+        var elements = document.getElementsByClassName("preload");
+        while (elements.length > 0) {
+            elements[0].classList.remove('preload');
+        }
+    }
+</script>
+
+</html>
