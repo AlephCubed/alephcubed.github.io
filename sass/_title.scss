@@ -83,15 +83,21 @@
 		}
 	}
 
-	.title-stack:hover &.base {
+	.title-stack:hover &.base,
+	.title-stack:focus &.base,
+	.title-stack:active &.base {
 		transform: translate(6px, 6px);
 	}
 
-	.title-stack:hover &.ghost1 {
+	.title-stack:hover &.ghost1,
+	.title-stack:focus &.ghost1,
+	.title-stack:active &.ghost1 {
 		transform: translate(4px, 4px);
 	}
 
-	.title-stack:hover &.ghost2 {
+	.title-stack:hover &.ghost2,
+	.title-stack:focus &.ghost2,
+	.title-stack:active &.ghost2 {
 		transform: translate(2px, 2px);
 	}
 }
