@@ -1,29 +1,17 @@
 :root {
-	--bg: #ffffff;
-	--bg-secondary: #e8e8e8;
-	--text: #000000;
+	color-scheme: dark light;
 
-	--flag3: #9AE8C0;
-	--flag2: #25CEAA;
-	--flag1: #098D6F;
+	--bg: light-dark(#ffffff, #121212);
+	--bg-secondary: light-dark(#e8e8e8, #202020);
+	--text: light-dark(#000000, #f0f0f0);
+
+	--flag3: light-dark(#9AE8C0, #3D1B79);
+	--flag2: light-dark(#25CEAA, #5049CB);
+	--flag1: light-dark(#098D6F, #7AACE4);
 
 	--link: var(--flag2);
 	--link-hover: var(--flag1);
 	--link-active: var(--flag3);
 	// Same as link color but with 20 added to hue.
-	--link-visited: hsl(187, 70%, 48%);
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--bg: #121212;
-		--bg-secondary: #202020;
-		--text: #f0f0f0;
-
-		--flag3: #3D1B79;
-		--flag2: #5049CB;
-		--flag1: #7AACE4;
-		// Same as link color but with 20 added to hue.
-		--link-visited: hsl(263, 56%, 54%);
-	}
+	--link-visited: light-dark(hsl(187, 70%, 48%), hsl(263, 56%, 54%));
 }
