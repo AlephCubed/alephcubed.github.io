@@ -1,6 +1,6 @@
 ---
-title: "Contact"
-template: "contact.html"
+title: "Socials"
+template: "social.html"
 ---
 
 Here are the sites that I am actively using.
