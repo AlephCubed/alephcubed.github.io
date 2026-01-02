@@ -2,7 +2,8 @@
 title: "Immediate Stats"
 date: 2025-03-23
 description: "A Rust crate for game stats that reset every frame, inspired by immediate mode GUI."
-source: "https://github.com/AlephCubed/immediate_stats"
+extra:
+  source: "https://github.com/AlephCubed/immediate_stats"
 ---
 
 This is my attempt at solving the issue of game stat tracking for a Bevy project
