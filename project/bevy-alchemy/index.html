@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="AlephCubed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)" />
+
+
+    
+    <meta name="description" content="An experimental, status effects-as-entities system for Bevy.">
+    
+
+    <title>
+        
+        AlephCubed - Bevy Alchemy
+        
+    </title>
+    <link rel="stylesheet" href="/base.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="AlephCubed" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+</head>
+
+<header class="top-nav preload">
+    <div class="container">
+        <nav>
+            <a href="/" class="title-stack">
+                <span class="title-layer ghost3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+	<path stroke="currentColor" stroke-linejoin="round" stroke-width="44"
+		d="M239 45c6-3 9-5 13-5h8c4 0 7 2 13 5l163 91c6 4 10 5 12 8l5 8 1 15v178l-1 15-5 8c-2 3-6 4-12 8l-163 91c-6 3-9 5-13 5h-8c-4 0-7-2-13-5L76 376c-6-4-10-5-12-8l-5-8-1-15V167l1-15 5-8c2-3 6-4 12-8z" />
+	<path stroke="currentColor" stroke-linejoin="round" stroke-width="44" d="m157.5 90.5 197 331" />
+	<path stroke="currentColor" stroke-linejoin="round" stroke-width="44"
+		d="M354.5 90.5c0 139.69631.69456 145.15423-67.92722 198.2724M157.5 421.5c.0285-139.69631-.66493-145.15437 67.96769-198.25853" />
+</svg>
+                    <span class="text">AlephCubed</span>
+                </span>
+                <span class="title-layer ghost2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+	<path stroke="currentColor" stroke-linejoin="round" stroke-width="44"
+		d="M239 45c6-3 9-5 13-5h8c4 0 7 2 13 5l163 91c6 4 10 5 12 8l5 8 1 15v178l-1 15-5 8c-2 3-6 4-12 8l-163 91c-6 3-9 5-13 5h-8c-4 0-7-2-13-5L76 376c-6-4-10-5-12-8l-5-8-1-15V167l1-15 5-8c2-3 6-4 12-8z" />
+	<path stroke="currentColor" stroke-linejoin="round" stroke-width="44" d="m157.5 90.5 197 331" />
+	<path stroke="currentColor" stroke-linejoin="round" stroke-width="44"
+		d="M354.5 90.5c0 139.69631.69456 145.15423-67.92722 198.2724M157.5 421.5c.0285-139.69631-.66493-145.15437 67.96769-198.25853" />
+</svg>
+                    <span class="text">AlephCubed</span>
+                </span>
+                <span class="title-layer ghost1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+	<path stroke="currentColor" stroke-linejoin="round" stroke-width="44"
+		d="M239 45c6-3 9-5 13-5h8c4 0 7 2 13 5l163 91c6 4 10 5 12 8l5 8 1 15v178l-1 15-5 8c-2 3-6 4-12 8l-163 91c-6 3-9 5-13 5h-8c-4 0-7-2-13-5L76 376c-6-4-10-5-12-8l-5-8-1-15V167l1-15 5-8c2-3 6-4 12-8z" />
+	<path stroke="currentColor" stroke-linejoin="round" stroke-width="44" d="m157.5 90.5 197 331" />
+	<path stroke="currentColor" stroke-linejoin="round" stroke-width="44"
+		d="M354.5 90.5c0 139.69631.69456 145.15423-67.92722 198.2724M157.5 421.5c.0285-139.69631-.66493-145.15437 67.96769-198.25853" />
+</svg>
+                    <span class="text">AlephCubed</span>
+                </span>
+                <span class="title-layer base">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+	<path stroke="currentColor" stroke-linejoin="round" stroke-width="44"
+		d="M239 45c6-3 9-5 13-5h8c4 0 7 2 13 5l163 91c6 4 10 5 12 8l5 8 1 15v178l-1 15-5 8c-2 3-6 4-12 8l-163 91c-6 3-9 5-13 5h-8c-4 0-7-2-13-5L76 376c-6-4-10-5-12-8l-5-8-1-15V167l1-15 5-8c2-3 6-4 12-8z" />
+	<path stroke="currentColor" stroke-linejoin="round" stroke-width="44" d="m157.5 90.5 197 331" />
+	<path stroke="currentColor" stroke-linejoin="round" stroke-width="44"
+		d="M354.5 90.5c0 139.69631.69456 145.15423-67.92722 198.2724M157.5 421.5c.0285-139.69631-.66493-145.15437 67.96769-198.25853" />
+</svg>
+                    <span class="text">AlephCubed</span>
+                </span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/project/">Projects</a></li>
+                <li><a href="/social/">Socials</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<body>
+    <section class="section">
+        <div class="container">
+            
+
+<h1 class="title">Bevy Alchemy</h1>
+<p class="subtitle">
+    December 26, 2025
+    
+    - <a href="https:&#x2F;&#x2F;github.com&#x2F;AlephCubed&#x2F;bevy_alchemy">Sourcecode</a>
+    
+    
+</p>
+<p class="description">An experimental, status effects-as-entities system for Bevy.</p>
+
+<hr>
+
+<p>There are many ways to achieve status effects in an ECS.
+Like most ECS problems, the best solutions often leverage the power of the ECS itself.</p>
+<p>Bevy Alchemy is my attempt at an ergonomic status effects-as-entities system, based on my work
+with <a href="../immediate-stats">Immediate Stats</a>.</p>
+<h2 id="the-problem"><a class="heading-anchor" href="#the-problem" aria-label="Anchor link for: the-problem"># </a>The Problem</h2>
+<p>At its core, status effects-as-entities can be achieved with just a
+simple <a rel="noopener" target="_blank" href="https://docs.rs/bevy/latest/bevy/ecs/relationship/">relationship</a>.
+This works perfectly fine for effects that should stack. Multiple instances can exist at once, and each is processed
+separately.</p>
+<p>But in many cases, an effect should only be applied once per target.</p>
+<h2 id="my-solution"><a class="heading-anchor" href="#my-solution" aria-label="Anchor link for: my-solution"># </a>My Solution</h2>
+<p>The solution I ended up using was to
+use <a rel="noopener" target="_blank" href="https://bevy-cheatbook.github.io/programming/commands.html#custom-commands">custom commands</a>
+to process and uphold effect invariants.</p>
+<p>This behaviour can be controlled using the <code>MergeMode</code> enum component.</p>
+<table><thead><tr><th>Mode</th><th>Behaviour</th></tr></thead><tbody>
+<tr><td>Stack</td><td>Multiple of the same effect can exist at once.</td></tr>
+<tr><td>Insert</td><td>New applications will overwrite the existing one.</td></tr>
+<tr><td>Merge</td><td>New applications are merged with the existing one, using a configurable merge function.</td></tr>
+</tbody></table>
+<h2 id="current-status"><a class="heading-anchor" href="#current-status" aria-label="Anchor link for: current-status"># </a>Current Status</h2>
+<p>There are many details that still need to be sorted out, and this project hasn't been tested in a large scale project,
+but overall, I am happy with the direction it is heading.</p>
+<p>It feels good to actually be releasing projects recently.
+I guess smaller scoped projects are easier to finish? Who could have guessed!</p>
+
+
+
+        </div>
+    </section>
+</body>
+
+<script>
+    window.onload = function () {
+        var elements = document.getElementsByClassName("preload");
+        while (elements.length > 0) {
+            elements[0].classList.remove('preload');
+        }
+    }
+</script>
+
+</html>
