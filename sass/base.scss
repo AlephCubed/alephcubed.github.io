@@ -32,6 +32,16 @@ a {
 	}
 }
 
+table,
+th,
+td {
+	border-collapse: collapse;
+	border: 1px solid;
+	border-color: var(--text);
+
+	padding: 10px;
+}
+
 .heading-anchor {
 	color: #808080;
 	text-decoration: none;

@@ -2,7 +2,8 @@
 title: "This Website"
 date: 2025-07-03
 description: "My personal static website, which you are looking at right now."
-source: "https://github.com/AlephCubed/alephcubed.github.io"
+extra:
+  source: "https://github.com/AlephCubed/alephcubed.github.io"
 ---
 
 I never really tried making a website for a couple of reasons:
